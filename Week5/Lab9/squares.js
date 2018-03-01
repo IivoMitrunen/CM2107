@@ -1,6 +1,6 @@
 $(function(){
 	// usual main starting point when web page loads
-	
+
 	// simple CSS class switcher
 	// find all divs
 	// bind to click events
@@ -8,6 +8,7 @@ $(function(){
 	$("div").click(function(){
 		// $(this) is a shortcut for the element we just selected
 		// using $("div")
+		$( ".red" ).fadeOut( "slow" );
 		if ($(this).hasClass("red")) {
 			$(this).addClass("blue").removeClass("red");
 		}
@@ -18,5 +19,5 @@ $(function(){
 			$(this).addClass("red").removeClass("green");
 		}
 	});
-	
+
 });

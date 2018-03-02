@@ -24,9 +24,9 @@
   for (var i in photos)
   {
     output+="<tr><td>"
-     + photos[i].rover.name + "</td><td>"
+    + photos[i].rover.name + "</td><td>"
     + photos[i].camera.full_name + "</td><td>"
-    + photos[i].earth_date + "</td><td>"
+    + photos[i].earth_date + "</tr><td>"
     + photos[i].img_src + "</td></tr>";
 
   }

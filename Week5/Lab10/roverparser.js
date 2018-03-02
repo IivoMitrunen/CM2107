@@ -28,7 +28,7 @@
     + photos[i].camera.full_name + "</td><td>"
     + photos[i].img_src + "</td><td>"
     + photos[i].earth_date + "</td><td>"
-    + photos[i].launch_date + "</td></tr>";
+    + photos[i].rover.launch_date + "</td></tr>";
 
 
   }

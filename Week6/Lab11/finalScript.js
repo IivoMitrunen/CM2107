@@ -27,8 +27,7 @@ function addResultTitles(jsondata) {
 
   for (var i=0; i<10; i++;){
     var title = jsondata.Search[i].Title;
-    htmlstring += "<li>" + title + "</li>";
-    htmlstring += "<li>" + title + "</li>";
+    htmlstring += "<li>" + title + "</li>"; 
   }
 
 

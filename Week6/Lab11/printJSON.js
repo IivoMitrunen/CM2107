@@ -15,7 +15,7 @@ $('#searchform').submit(submit() {
 function getResultsFromOMDB(searchterms) {
   //call youtube API using ajax
   //build url for the reguest
-  var url ="http://wwww.omdbapi.com/?apikey=8dbb4272&s=" + searchterms;
+  var url ="http://wwww.omdbapi.com/?apikey=8af9349a&s=" + searchterms;
     //use jquery json shortcut
     $.getJSON(url, function(jsondata) {
       //handle the results

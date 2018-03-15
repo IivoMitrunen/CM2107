@@ -11,7 +11,6 @@ var client = new Twitter({
 app.use(express.static('public'))
 app.get('/'
 , function(req, res){
-  (hence statuses.user_timeline)
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
    if (!error) {
    console.log(tweets);

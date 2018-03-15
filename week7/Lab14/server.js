@@ -9,11 +9,11 @@ var client = new Twitter({
  access_token_secret: 'dubHwb1UBn1g1NbXGrjfbuqEMTghmJn9LmUNgG62IcMLp'
 });
 app.use(express.static('public'))
-app.get('/'
-, function(req, res){
+app.get('/', function(req, res){
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
    if (!error) {
    console.log(tweets);
+   res.send(JSON.stringify(tweets))
    }
   });
 });

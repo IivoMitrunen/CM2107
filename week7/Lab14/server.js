@@ -1,3 +1,4 @@
+var params = {screen_name: 'nodejs'};
 var express = require('express');
 var app = express();
 var Twitter = require('twitter');
@@ -15,7 +16,7 @@ app.get('/'
  console.log(tweets);
  }
 });
-  var params = {screen_name: 'nodejs'};
+
  res.send("Hello world! by express");
 });
 

@@ -18,3 +18,12 @@ app.get('/'
   });
 });
 app.listen(8080);
+
+var output = "";
+ for (var t = 0; t < tweets.length; t++) {
+ output += "<div>";
+ output += "<h2>" + tweets[t].user.screen_name + "<h2>";
+ output += "<p>" + tweets[t].text + "</p>"
+ output += "</div>";
+ }
+res.send(output);

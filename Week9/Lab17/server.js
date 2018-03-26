@@ -6,7 +6,7 @@ var app = express();
 app.set('view engine', 'ejs');
 // use res.render to load up an ejs view file
 // index page
-pp.get('/', function(req, res) {
+app.get('/', function(req, res) {
  var drinks = [
  { name: 'Bloody Mary', drunkness: 3 },
  { name: 'Martini', drunkness: 5 },

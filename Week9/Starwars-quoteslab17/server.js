@@ -48,7 +48,7 @@ app.get('/update', function(req,res) {
 
 
 
-app.get('/allquotes', function(req, res) {
+app.get('/', function(req, res) {
   db.collection('quotes').find().toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
@@ -59,7 +59,7 @@ app.get('/allquotes', function(req, res) {
       output += "<p>" + result[i].quote + "</p>"
       output += "</div>"
     }
-    res.send(output);
+    res.render('index.ejs',  {quotes:result})
   });
 });
 

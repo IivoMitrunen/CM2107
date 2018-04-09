@@ -108,7 +108,10 @@ app.get('/pages/users',function(req,res) {
 
 app.get('/pages/users',function(req,res) {
   console.log(req.body);
-  res.render('users', { name: "Test"});
+  res.render('users', {user:
+    { name: "Test"}
+    }
+  );
 });
 
 

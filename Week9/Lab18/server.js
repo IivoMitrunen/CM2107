@@ -96,6 +96,10 @@ app.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+app.get('/pages/profile',function(req,res) {
+  res.render('profile', { username: req.body.first});
+});
+
 
 
 

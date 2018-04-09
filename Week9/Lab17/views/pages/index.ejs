@@ -16,15 +16,20 @@
       <p>Welcome to templating using EJS</p>
       <h2>Variable</h2>
       <p>
-
+        <%= tagline %>
       </p>
       <h2>Loop</h2>
       <ul>
-
+        <% drinks.forEach(function(drink) { %>
           <li>
+<<<<<<< HEAD
     
+=======
+            <%= drink.name %> -
+              <%= drink.drunkness %>
+>>>>>>> 3475d16afda5220101c74638f9d0e14ba743de0f
           </li>
-
+          <% }); %>
       </ul>
     </div>
   </main>

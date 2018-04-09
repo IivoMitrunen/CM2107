@@ -100,6 +100,10 @@ app.get('/pages/profile',function(req,res) {
   res.render('profile', { username: req.body.first});
 });
 
+app.get('/pages/users',function(req,res) {
+  res.render('users', { name: req.body.first});
+});
+
 
 
 

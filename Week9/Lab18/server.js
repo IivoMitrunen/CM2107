@@ -107,8 +107,8 @@ app.get('/pages/users',function(req,res) {
 */
 
 app.get('/pages/users',function(req,res) {
-  console.log(req.body);
-  res.render('users', req.body
+  console.log("req.body");
+  res.render('users', {data:req.body}
   );
 });
 

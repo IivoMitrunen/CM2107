@@ -48,7 +48,7 @@ app.get('/', function(req, res) {
     if (err) throw err;
     //the result of the query is sent to the users page as the "users" array
     res.render('pages/users', {
-      users: result
+      users: result, user:req.session.user
     })
   });
 
@@ -124,12 +124,14 @@ app.post('/dologin', function(req, res) {
   var uname = req.body.username;
   var pword = req.body.password;
 
+
+
   db.collection('people').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
+    if(result.login.password == pword){ req.session.loggedin = true;req.session.user = uname;  res.redirect('/') }
     //otherwise send them back to login
     else{res.redirect('/login')}
   });

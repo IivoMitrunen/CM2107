@@ -88,6 +88,10 @@ app.get('/remuser', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
   res.render('pages/remuser')
 });
+app.get('/updateuser', function(req, res) {
+  if(!req.session.loggedin){res.redirect('/login');return;}
+  res.render('pages/updateuser')
+});
 //logour route cause the page to Logout.
 //it sets our session.loggedin to false and then redirects the user to the login
 app.get('/logout', function(req, res) {
@@ -191,3 +195,28 @@ var datatostore = {
     res.redirect('/')
   })
 });
+
+
+app.post('/updateuser', function(req, res) {
+  //check we are logged in
+  if(!req.session.loggedin){res.redirect('/login');return;}
+
+  var datatostore = {
+  "gender":req.body.gender,
+  "name":{"title":req.body.title,"first":req.body.first,"last":req.body.last},
+  "location":{"street":req.body.street,"city":req.body.city,"state":req.body.state,"postcode":req.body.postcode},
+  "email":req.body.email,
+  "login":{"username":req.body.username,"password":req.body.password},
+  "dob":req.body.dob,"registered":Date(),
+  "picture":{"large":req.body.large,"medium":req.body.medium,"thumbnail":req.body.thumbnail},
+  "nat":req.body.nat}
+
+
+  //once created we just run the data string against the database and all our new data will be saved/
+    db.collection('people').save(datatostore, function(err, result) {
+      if (err) throw err;
+      console.log('saved to database')
+      //when complete redirect to the index
+      res.redirect('/')
+    })
+  });

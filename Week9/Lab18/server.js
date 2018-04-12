@@ -90,7 +90,7 @@ app.get('/remuser', function(req, res) {
 });
 app.get('/doupdate', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
-  res.render('pages/updateuser')
+  res.render('pages/doupate')
 });
 //logour route cause the page to Logout.
 //it sets our session.loggedin to false and then redirects the user to the login
@@ -174,7 +174,7 @@ app.post('/adduser', function(req, res) {
   //check we are logged in
   if(!req.session.loggedin){res.redirect('/login');return;}
 
-  //we create the data string from the form components that have been passed in
+  //we create the data strin  g from the form components that have been passed in
 
 var datatostore = {
 "gender":req.body.gender,

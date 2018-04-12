@@ -197,7 +197,7 @@ var datatostore = {
 });
 
 
-app.post('/updateuser', function(req, res) {
+app.post('/doupdate', function(req, res) {
   //check we are logged in
   if(!req.session.loggedin){res.redirect('/login');return;}
 

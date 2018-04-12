@@ -88,7 +88,7 @@ app.get('/remuser', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
   res.render('pages/remuser')
 });
-app.get('/updateuser', function(req, res) {
+app.get('/doupdate', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
   res.render('pages/updateuser')
 });
@@ -197,7 +197,7 @@ var datatostore = {
 });
 
 
-app.post('/updateuser', function(req, res) {
+app.post('/doupdate', function(req, res) {
   //check we are logged in
   if(!req.session.loggedin){res.redirect('/login');return;}
 

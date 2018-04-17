@@ -88,7 +88,7 @@ app.get('/remuser', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
   res.render('pages/remuser')
 });
-app.get('/doupdate', function(req, res) {
+app.get('/doupate', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
   res.render('pages/doupate')
 });

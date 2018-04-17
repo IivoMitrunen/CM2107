@@ -49,6 +49,11 @@ app.get('/', function(req, res) {
     //the result of the query is sent to the users page as the "users" array
     res.render('pages/users', {
       users: result, user:req.session.user
+
+    })
+    res.render('pages/Update', {
+      users: result, user:req.session.user
+
     })
   });
 
@@ -89,7 +94,7 @@ app.get('/remuser', function(req, res) {
   res.render('pages/remuser')
 });
 app.get('/doupate', function(req, res) {
-  if(!req.session.loggedin){res.redirect('/login');return;}
+  if(!req.session.loggedin, req.session.user = uname){res.redirect('/login');return;}
   res.render('pages/doupate')
 });
 //logour route cause the page to Logout.

@@ -219,7 +219,7 @@ app.post('/doupdate', function(req, res) {
 
 
 
-    db.collection('people').update(datatostore, function(err, result) {
+    db.updateUser('people')(datatostore, function(err, result) {
       if (err) throw err;
       console.log('updated to database')
       //when complete redirect to the index

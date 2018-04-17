@@ -47,7 +47,7 @@ app.get('/', function(req, res) {
   db.collection('people').find().toArray(function(err, result) {
     if (err) throw err;
     //the result of the query is sent to the users page as the "users" array
-    res.render('pages/users', {
+    res.render('pages/users', 'pages/doupate' {
       users: result, user:req.session.user
 
     })

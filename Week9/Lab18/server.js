@@ -89,9 +89,9 @@ app.get('/remuser', function(req, res) {
   if(!req.session.loggedin){res.redirect('/login');return;}
   res.render('pages/remuser')
 });
-app.get('/doupate', function(req, res) {
+app.get('/doupdate', function(req, res) {
   if(!req.session.loggedin, req.session.user = uname){res.redirect('/login');return;}
-  res.render('pages/doupate')
+  res.render('pages/doupdate')
 });
 //logour route cause the page to Logout.
 //it sets our session.loggedin to false and then redirects the user to the login
@@ -116,7 +116,7 @@ app.get('/pages/users',function(req,res) {
   res.render('users', {data:req.body}
   );
 });
-app.get('/pages/doupate',function(req,res) {
+app.get('/pages/doupdate',function(req,res) {
   console.log("req.body");
   res.render('users', {data:req.body}
   );

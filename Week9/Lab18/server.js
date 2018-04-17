@@ -51,10 +51,7 @@ app.get('/', function(req, res) {
       users: result, user:req.session.user
 
     })
-    res.render('pages/Update', {
-      users: result, user:req.session.user
 
-    })
   });
 
 });

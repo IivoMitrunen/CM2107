@@ -51,10 +51,6 @@ app.get('/', function(req, res) {
       users: result, user:req.session.user
 
     })
-    res.render('pages/Upate', {
-      users: result, user:req.session.user
-
-    })
   });
 
 });

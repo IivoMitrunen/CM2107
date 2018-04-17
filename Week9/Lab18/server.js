@@ -218,10 +218,10 @@ app.post('/doupdate', function(req, res) {
   "nat":req.body.nat}
 
 
-  //once created we just run the data string against the database and all our new data will be saved/
-    db.collection('people').update(datatostore, function(err, result) {
+
+    db.people.update(datatostore, function(err, result) {
       if (err) throw err;
-      console.log('saved to database')
+      console.log('updated to database')
       //when complete redirect to the index
       res.redirect('/')
     })

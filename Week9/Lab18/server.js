@@ -90,7 +90,7 @@ app.get('/remuser', function(req, res) {
   res.render('pages/remuser')
 });
 app.get('/doupdate', function(req, res) {
-  if(!req.session.loggedin, req.session.user = uname){res.redirect('/login');return;}
+  if(!req.session.loggedin,){res.redirect('/login');return;}
   res.render('pages/doupdate')
 });
 //logour route cause the page to Logout.

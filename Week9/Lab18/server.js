@@ -47,7 +47,7 @@ app.get('/', function(req, res) {
   db.collection('people').find().toArray(function(err, result) {
     if (err) throw err;
     //the result of the query is sent to the users page as the "users" array
-    res.render('pages/users', pages/doupate, {
+    res.render('pages/users', {
       users: result, user:req.session.user
 
     })
@@ -219,7 +219,7 @@ app.post('/doupdate', function(req, res) {
 
 
   //once created we just run the data string against the database and all our new data will be saved/
-    db.collection('people').save(datatostore, function(err, result) {
+    db.collection('people').update(datatostore, function(err, result) {
       if (err) throw err;
       console.log('saved to database')
       //when complete redirect to the index
